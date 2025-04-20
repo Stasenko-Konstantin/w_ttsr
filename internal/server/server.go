@@ -8,6 +8,9 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/pkg/errors"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/valyala/fasthttp/fasthttpadaptor"
+	"log"
 	"strings"
 )
 
@@ -34,6 +37,13 @@ func New(port, connstr string) (*server, error) {
 	repo := repository.New(db)
 	ctrl := controller.New(repo)
 	_ = ctrl
+
+	p := fasthttpadaptor.NewFastHTTPHandler(promhttp.Handler())
+	app.Get("/metrics", func(ctx *fiber.Ctx) error {
+		log.Println("Metrics endpoint")
+		p(ctx.Context())
+		return nil
+	})
 
 	app.Get("/tasks", func(c *fiber.Ctx) error {
 		tasks, err := ctrl.GetTasks()

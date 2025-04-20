@@ -110,3 +110,18 @@ make doc
 - [domain](http://localhost:6060/pkg/github.com/Stasenko-Konstantin/w_ttsr/internal/domain/)
 - [repository](http://localhost:6060/pkg/github.com/Stasenko-Konstantin/w_ttsr/internal/repository/)
 - [server](http://localhost:6060/pkg/github.com/Stasenko-Konstantin/w_ttsr/internal/server/)
+
+---
+
+## метрики
+
+также ради интереса реализовал простые метрики (открывать ссылки после [запуска](#запуск)):
+
+- [grafana](http://localhost:3000/) - в качестве источника данных использовать `prometheus` по ссылке `https://prometheus:9090`
+- [prometheus](http://localhost:9090/) - `sum(w_ttsr_repository_query_total)`
+
+`grafana`:
+![](img/grafana.png)
+
+`prometheus`:
+![](img/prometheus.png)
