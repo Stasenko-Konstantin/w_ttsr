@@ -56,6 +56,7 @@ API-эндпоинты:
 - Dockerfile - настройка контейнера для программы
 - go.mod и go.sum - зависимости
 - Makefile - удобный запуск через `make`
+- prometheus.yml - настройки `prometheus`
 
 ---
 
