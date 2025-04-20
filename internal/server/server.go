@@ -10,7 +10,6 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/valyala/fasthttp/fasthttpadaptor"
-	"log"
 	"strings"
 )
 
@@ -40,7 +39,6 @@ func New(port, connstr string) (*server, error) {
 
 	p := fasthttpadaptor.NewFastHTTPHandler(promhttp.Handler())
 	app.Get("/metrics", func(ctx *fiber.Ctx) error {
-		log.Println("Metrics endpoint")
 		p(ctx.Context())
 		return nil
 	})
