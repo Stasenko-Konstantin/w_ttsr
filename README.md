@@ -23,6 +23,7 @@
 Реализовано с помощью:
 - Go + Fiber
 - PostgreSQL (через `pgx`)
+- Docker + docker-compose
 
 <br>
 
