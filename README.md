@@ -61,13 +61,13 @@ API-эндпоинты:
 
 ## запуск
 
-основное:
+Основное:
 ```bash
 git clone https://github.com/Stasenko-Konstantin/w_ttsr && cd w_ttsr
 make init  # первый запуск, инициализация postgres
 ```
 
-дополнительные удобства:
+Дополнительные удобства:
 ```bash
 make stop  # выключение сервера
 make run   # запуск уже инициализированного сервера, есть доступ к постоянным данным
@@ -102,12 +102,12 @@ make clear # полный сброс с уничтожением данных
 
 ## документация
 
-сперва нужно запустить локальный сервер для документации:
+Сперва нужно запустить локальный сервер для документации:
 ```bash
 make doc
 ```
 
-затем можно смотреть саму документацию:
+Затем можно смотреть саму документацию:
 - [config](http://localhost:6060/pkg/github.com/Stasenko-Konstantin/w_ttsr/internal/config/)
 - [controller](http://localhost:6060/pkg/github.com/Stasenko-Konstantin/w_ttsr/internal/controller/)
 - [domain](http://localhost:6060/pkg/github.com/Stasenko-Konstantin/w_ttsr/internal/domain/)
@@ -118,7 +118,7 @@ make doc
 
 ## метрики
 
-также ради интереса реализовал простые метрики (открывать ссылки после [запуска](#запуск)):
+Также ради интереса реализовал простые метрики (открывать ссылки после [запуска](#запуск)):
 
 - [grafana](http://localhost:3000/) - в качестве источника данных использовать `prometheus` по ссылке `https://prometheus:9090`
 - [prometheus](http://localhost:9090/) - `sum(w_ttsr_repository_query_total)`
